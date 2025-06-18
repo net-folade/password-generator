@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 60px;
+    text-align: center;
+}
+
+.hero-section {
+    flex: 1;
+    color: white;
+    max-width: 500px;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.generator-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    min-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.generator-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.password-display {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+    position: relative;
+    word-break: break-all;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.password-display:hover {
+    border-color: #667eea;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    color: #666;
+}
+
+.copy-btn:hover {
+    background: #e9ecef;
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.length-section {
+    margin-bottom: 30px;
+}
+
+.length-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.length-label {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+}
+
+.length-value {
+    font-weight: 600;
+    color: #667eea;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+    outline: none;
+    -webkit-appearance: none;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.slider:hover {
+    background: #ddd;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-title {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease;
+}
+
+.checkbox-item:hover {
+    transform: translateX(5px);
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkbox:hover {
+    border-color: #667eea;
+}
+
+.checkbox input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.checkbox input:checked + .checkmark {
+    background: #667eea;
+    border-color: #667eea;
+    transform: scale(1.1);
+}
+
+.checkbox input:checked + .checkmark::after {
+    opacity: 1;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.checkbox-label {
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.checkbox-label:hover {
+    color: #667eea;
+}
+
+.generate-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .generator-card {
+        min-width: unset;
+        width: 100%;
+        max-width: 400px;
+        padding: 30px;
+    }
+    
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .generator-card {
+        padding: 25px;
+    }
+    
+    .password-display {
+        font-size: 14px;
+    }
+}
